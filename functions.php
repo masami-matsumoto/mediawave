@@ -65,3 +65,15 @@ function add_page_to_tag_archive($obj) {
 	}
 }
 add_action('pre_get_posts','add_page_to_tag_archive');
+
+function original_pagenation(){
+
+    the_posts_pagination(
+        array(
+            'mid_size' => 2,
+			'format' => '?=%#%',
+            'prev_text' => '前へ',
+            'next_text' => '次へ',
+        )
+    );
+}

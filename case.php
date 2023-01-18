@@ -343,101 +343,36 @@ get_header();
         </ul>
         <!-- 導入事例群 -->
         <div class="case_study_area grid-x">
-          <!-- 導入事例 -->
-          <a class="case_study cell small-6 large-4" href="/case/case-page/">
+         <!-- 導入事例 -->
+    <?php
+        $args = array(
+          'post_type' => 'case-study',
+          'posts_per_page' => 3, // 取得数
+
+        );
+        $wp_query = new WP_Query( $args );
+        if ( $wp_query->have_posts() ):
+          while ( $wp_query->have_posts() ): $wp_query->the_post();
+        ?>
+          <a class="case_study cell small-6 large-4" href="<?php the_field('case_url'); ?>">
             <div class="img_area">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/toyama_logo.png" alt="">
+              <img src="<?php the_field('case_logo'); ?>" alt="">
             </div>
             <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
+              <h3 class="page-title"><?php the_field('case_h1'); ?></h3>
               <div class="case">
-                <p class="t_3">CASE：</p><p class="t_3">HOTEL JAL city 富山</p>
+                <p class="t_3">施設名：</p><p class="t_3"><?php the_field('case_company_name'); ?></p>
               </div>
               <div class="service">
-                <p class="t_3">SERVICE：</p><p class="t_3">Vizu/メディアウェイブ光/knot/ease</p>
+                <p class="t_3">導入サービス：</p><p class="t_3"><?php the_field('service'); ?></p>
               </div>
             </div>
           </a>
-          <!-- 導入事例ここまで -->
-          <!-- 導入事例 -->
-          <a class="case_study cell small-6 large-4" href="/case/case-page/">
-            <div class="img_area">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/makuhari_logo.png" alt="">
-            </div>
-            <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
-              <div class="case">
-                <p class="t_3">CASE：</p><p class="t_3">ホテルスプリングス幕張</p>
-              </div>
-              <div class="service">
-                <p class="t_3">SERVICE：</p><p class="t_3">Vizu/メディアウェイブ光/knot/ease</p>
-              </div>
-            </div>
-          </a>
-          <!-- 導入事例ここまで -->
-          <!-- 導入事例 -->
-          <a class="case_study cell small-6 large-4" href="/case/case-page/">
-            <div class="img_area">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/kawasaki_logo.svg" alt="">
-            </div>
-            <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
-              <div class="case">
-                <p class="t_3">CASE：</p><p class="t_3">川崎日航ホテル「夜間飛行」</p>
-              </div>
-              <div class="service">
-                <p class="t_3">SERVICE：</p><p class="t_3">Vizu/メディアウェイブ光/knot/ease/クリーニングボード</p>
-              </div>
-            </div>
-          </a>
-          <!-- 導入事例ここまで -->
-          <!-- 導入事例 -->
-          <a class="case_study cell small-6 large-4" href="/case/case-page/">
-            <div class="img_area">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/shiosaitei_logo.png" alt="">
-            </div>
-            <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
-              <div class="case">
-                <p class="t_3">CASE：</p><p class="t_3">しおさい亭</p>
-              </div>
-              <div class="service">
-                <p class="t_3">SERVICE：</p><p class="t_3">Vizu/メディアウェイブ光/knot/ease</p>
-              </div>
-            </div>
-          </a>
-          <!-- 導入事例ここまで -->
-          <!-- 導入事例 -->
-          <a class="case_study cell small-6 large-4" href="/case/case-page/">
-            <div class="img_area">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/toyama_logo.png" alt="">
-            </div>
-            <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
-              <div class="case">
-                <p class="t_3">CASE：</p><p class="t_3">HOTEL JAL city 富山</p>
-              </div>
-              <div class="service">
-                <p class="t_3">SERVICE：</p><p class="t_3">Vizu/メディアウェイブ光/knot/ease</p>
-              </div>
-            </div>
-          </a>
-          <!-- 導入事例ここまで -->
-          <!-- 導入事例 -->
-          <a class="case_study cell small-6 large-4" href="case-page.html">
-            <div class="img_area">
-              <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/makuhari_logo.png" alt="">
-            </div>
-            <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
-              <div class="case">
-                <p class="t_3">CASE：</p><p class="t_3">ホテルスプリングス幕張</p>
-              </div>
-              <div class="service">
-                <p class="t_3">SERVICE：</p><p class="t_3">Vizu/メディアウェイブ光/knot/ease</p>
-              </div>
-            </div>
-          </a>
+          <?php
+        endwhile;
+        wp_reset_postdata();
+        endif;
+        ?>
           <!-- 導入事例ここまで -->
         </div>
 

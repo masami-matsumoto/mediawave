@@ -9,6 +9,7 @@
         <div class="horizontal-archive__inner archive-box">
 		<?php 
 		if ( have_posts()):
+			query_posts('posts_per_page=10');
 		while( have_posts()):the_post();
 		?>
 		
@@ -24,15 +25,7 @@
 		?>
 		</div>
 		</div>
-		<div class="pager">
-		<ul class="pagerList">
-			<?php
-			if(function_exists('page_navi')):
-			page_navi();
-			endif;
-			?>
-		</ul>
-		</div>
+		<?php original_pagenation(); ?>
 </section>
   </main>
 <?php get_footer(); ?>

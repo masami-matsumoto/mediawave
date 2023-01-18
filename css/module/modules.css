@@ -1533,7 +1533,7 @@
   min-height: 1300px;
 }
 /* ページナビゲーション */
-.pagination .nav-links {
+.page_navi {
   text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
@@ -1544,7 +1544,7 @@
   -ms-flex-pack: center;
   justify-content: center;
 }
-.pagination .nav-links .page-numbers {
+.page_navi li {
   margin: 0 6.5px;
   width: 36px;
   height: 36px;
@@ -1555,7 +1555,7 @@
   justify-content: center;
   cursor: pointer;
 }
-.pagination .nav-links a.page-numbers {
+.page_navi li a {
   width: 36px;
   height: 36px;
   text-align: center;
@@ -1566,17 +1566,17 @@
   justify-content: center;
   cursor: pointer;
 }
-.pagination .nav-links .current {
+.page_navi li.current {
   color: #fff;
   font-weight: bold;
   padding: 3px 7px;
   background: #C5A77A;
   border: solid 1px #C5A77A;
 }
-.pagination .nav-links a.page-numbers:hover {
+.page_navi li:hover {
   opacity: 0.8;
 }
-.pagination .nav-links a.next.page-numbers {
+.page_navi li.page_nums span {
   color: #fff;
   padding: 3px 7px;
   background: #666;

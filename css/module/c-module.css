@@ -1,0 +1,63 @@
+@charset "utf-8";
+.c-module dl.c-module_dl {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+}
+.c-module dl.c-module_dl + .c-module_dl {
+    margin-top: 32px;
+}
+.c-module dl.c-module_dl dt {
+    width: 250px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+.c-module dl.c-module_dl dd {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.c-module dl.c-module_dl dd ul li a span {
+    padding-right: 30px;
+    position: relative;
+    display: inline-block;
+}
+.c-module dl.c-module_dl dd ul li a span::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background: url("../images/pdf2.svg") no-repeat;
+    width: 18px;
+    height: 18px;
+}
+.pdf_icon {
+    width: 25px;
+    vertical-align: bottom;
+}
+.margin_li {
+    margin-top: 20px;
+}
+.agreement-box h4 {
+    margin-top: 20px;
+    color: #3A8676;
+}
+@media screen and (max-width: 768px) {
+.c-module dl.c-module_dl {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.margin_li {
+    margin-top: 10px;
+}
+.agreement-box h4 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+}

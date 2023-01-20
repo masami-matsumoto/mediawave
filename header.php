@@ -25,8 +25,8 @@
 </head>
 
 <body>
-<?php if( is_page(array('case','case-page') )): ?>
-<div id="wrapper" class="ccm-page page"> 
+<?php if( is_post_type_archive('case-study') || is_singular('case-study')): ?>
+<div id="wrapper" class="ccm-page page">
 <?php endif; ?>
 <div id="wrapper">
   <div class="bg01"><img src="<?php echo get_template_directory_uri(); ?>/images/bk.png" alt=""/></div>

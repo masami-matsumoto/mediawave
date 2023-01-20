@@ -372,33 +372,34 @@ img {
   width: fit-content;
   margin: 55px auto 85px;
 }
-.news-pagenation li {
+.navigation .pagination {
   padding: 0 10px;
 }
-.news-pagenation li.page_number a, .news-pagenation li.page_number span {
+.page-numbers {
   font-size: 1.4em;
   font-weight: normal;
   color: white;
+  padding: 0 10px;
 }
-.news-pagenation li.page_number.active a, .news-pagenation li.page_number.active span {
+.page-numbers .current {
   font-size: 1.6em;
   font-weight: bold;
 }
-.news-pagenation li.page_btn a, .news-pagenation li.page_btn span {
+/* .news-pagenation li.page_btn a, .news-pagenation li.page_btn span {
   display: block;
   width: 25px;
   height: 25px;
-}
-.news-pagenation li.page_btn.prev {
+} */
+/* .prev .page-numbers {
   background-image: url("../../images/case-study/page_prev_white.svg");
   background-position: center;
   background-repeat: no-repeat;
 }
-.news-pagenation li.page_btn.next {
+.next .page-numbers {
   background-image: url("../../images/case-study/page_next_white.svg");
   background-position: center;
   background-repeat: no-repeat;
-}
+} */
 .page_wrapper {
   color: white;
   padding-top: 50px;

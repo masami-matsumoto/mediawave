@@ -201,7 +201,7 @@ get_header();
         ?>
       </tbody>
     </table>
-    <a class = "round_arrow arrow-position-right" href = "/archives/category/news/" > 一覧へ </a> </section >
+    <a class = "round_arrow arrow-position-right" href = "/category/news/" > 一覧へ </a> </section >
   <!-- case study --> 
 <section class="section l-content-fixed" id="caseStudy">
   <header class="section-header">
@@ -242,7 +242,7 @@ get_header();
           <!-- 導入事例ここまで -->
          
         </div>
-        <a class="round_arrow arrow-position-right" href="/case/">一覧へ</a>
+        <a class="round_arrow arrow-position-right" href="/case-study/">一覧へ</a>
     </section> 
   <!-- pick-up service -->
   <section class="l-content-fixed section">

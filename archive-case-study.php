@@ -1,9 +1,4 @@
-<?php
-/*
-Template Name: case
-*/
-get_header();
-?>
+<?php get_header(); ?>
   <!-- main -->
   <main class="l-main about-main" id="page">
        <!-- トップビュー -->
@@ -343,12 +338,11 @@ get_header();
         </ul>
         <!-- 導入事例群 -->
         <div class="case_study_area grid-x">
-         <!-- 導入事例 -->
-    <?php
+        <?php
         $args = array(
           'post_type' => 'case-study',
-          'posts_per_page' => 3, // 取得数
-
+          'posts_per_page' => 2, // 取得数
+          'paged' => get_query_var('paged') //追加事項　変数［paged］は「今、何ページ目？」という値を指定するものです。
         );
         $wp_query = new WP_Query( $args );
         if ( $wp_query->have_posts() ):
@@ -374,11 +368,21 @@ get_header();
         endif;
         ?>
           <!-- 導入事例ここまで -->
+
         </div>
 
         <!-- ページネーション -->
         <ul class="news-pagenation">
-          <li class="prev page_btn">
+        <?php
+        $args = array(
+        'mid_size' => 1, 
+        'prev_text' => '<', 
+        'next_text' => '> ', 
+        'screen_reader_text' => ' ', 
+         );
+         the_posts_pagination($args);
+         ?>
+          <!-- <li class="prev page_btn">
             <a href="#"></a>
           </li>
           <li class="page_number"><a href="#">1</a></li>
@@ -388,7 +392,7 @@ get_header();
           <li class="page_number"><a href="#">5</a></li>
           <li class="next page_btn">
             <a href="#"></a>
-          </li>
+          </li> -->
         </ul>
 
       </div>

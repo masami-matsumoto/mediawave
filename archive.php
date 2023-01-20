@@ -7,10 +7,8 @@
       </header>
 		<div class="horizontal-archive">
         <div class="horizontal-archive__inner archive-box">
-		<?php 
-		if ( have_posts()):
-		while( have_posts()):the_post();
-		?>
+		<?php if ( have_posts()):query_posts($query_string . '&posts_per_page=10&paged='.$paged); ?>
+		<?php while( have_posts()):the_post(); ?>
 		
 		<a class="news-link" href="<?php the_permalink(); ?>">
 			<div class="news-body">

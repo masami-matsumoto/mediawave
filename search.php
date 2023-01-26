@@ -1,4 +1,10 @@
 <?php get_header(); ?>
+<?php
+    global $wp_query;
+    $total_results = $wp_query->found_posts;//該当件数を取得
+    $search_query = get_search_query();//検索キーワードを取得
+    query_posts($query_string.'&posts_per_page=10');//表示件数を指定
+?>
   <!-- main -->
   <main class="l-main about-main" id="page">
        <!-- トップビュー -->
@@ -12,10 +18,8 @@
 	  <!-- 導入事例セクション -->
     <section class="case_study_wrapper">
       <div class="container">
-        <h1 class="section_title text-center">導入事例</h1>
+        <h1 class="section_title text-center">導入事例検索結果</h1>
         <!-- 検索リスト -->
-        <!-- 検索ボタン -->
-          <?php get_search_form(); ?>
 
         <!-- 導入事例群 -->
         <div class="case_study_area grid-x">

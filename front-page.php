@@ -214,8 +214,7 @@ get_header();
         $args = array(
           'post_type' => 'case-study',
           'posts_per_page' => 3, // 取得数
-
-        );
+　　　　　　);
         $wp_query = new WP_Query( $args );
         if ( $wp_query->have_posts() ):
           while ( $wp_query->have_posts() ): $wp_query->the_post();
@@ -230,7 +229,18 @@ get_header();
                 <p class="t_3">施設名：</p><p class="t_3"><?php the_field('case_company_name'); ?></p>
               </div>
               <div class="service">
-                <p class="t_3">導入サービス：</p><p class="t_3"><?php the_field('service'); ?></p>
+                <?php $service = get_field('service');
+                if($service): ?>
+                <p class="t_3">導入サービス：</p><p class="t_3">
+                <?php 
+                     $tmp = $service;
+                     foreach( $service as $services ){
+                     echo $services['label'];
+                     if(next($tmp)){
+                      echo ","; // 最後の要素ではないとき
+                    }
+                    }; ?></p>
+                <?php endif; ?>
               </div>
             </div>
           </a>

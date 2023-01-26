@@ -26,16 +26,41 @@
               </div>
               <div class="grid-x">
                 <p class="info_title cell small-4 t_2">客室数</p>
-                <p class="article_info_ans cell small-8 t_2"><?php the_field('room'); ?></p>
+                <p class="article_info_ans cell small-8 t_2">
+                <?php if( get_field('room')){
+                    $rooms = get_field('room');
+                    foreach ( (array)$rooms as $room){
+                      echo $room['label'];
+                    }
+                  }
+                  ?>
+                </p>
               </div>
               <div class="grid-x">
                 <p class="info_title cell small-4 t_2">部署</p>
-                <p class="article_info_ans cell small-8 t_2"><?php the_field('team'); ?></p>
+                <p class="article_info_ans cell small-8 t_2">
+                  <?php if( get_field('team')){
+                    $teams = get_field('team');
+                    $tmp=$teams;
+                    foreach ( (array)$teams as $team){
+                      echo $team['label'];
+                      if(next($tmp)){
+                        echo ","; // 最後の要素ではないとき
+                      }
+                    }
+                  }
+                  ?>
+                </p>
               </div>
               <div class="grid-x">
                 <p class="info_title cell small-4 t_2">課題</p>
                 <div class="cell small-8">
-                  <p class="article_info_ans t_2"><?php the_field('task'); ?></p>
+                <?php if( get_field('task') ) { ?> 
+                  <?php $tasks = get_field('task');
+                  foreach ( (array)$tasks as $task ) { ?>
+                  <p class="article_info_ans t_2"><?php echo $task['label']; ?></p>
+                  <?php } ?>
+                  <?php } ?>
                 </div>
               </div>
               <div class="grid-x">
@@ -51,7 +76,7 @@
               <?php if( get_field('service') ) { ?> 
               <?php $checks = get_field('service');
               foreach ( (array)$checks as $check ) { ?>
-              <p class="tag t_2"><?php echo $check; ?></p>
+              <p class="tag t_2"><?php echo $check['label']; ?></p>
               <?php } ?>
               <?php } ?>
 
@@ -128,66 +153,134 @@
           <div class="bar"></div>
           <!-- 導入事例群 -->
           <div class="case_study_area grid-x"> 
-            <!-- 導入事例 --> 
-            <a class="case_study cell small-6 medium-4 large-3" href="page.html">
-            <div class="img_area"> <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/toyama_logo.png" alt=""> </div>
+            <!-- 導入事例1 -->
+            <?php 
+            $topics1 = get_field('topics1');
+            $topics_url_1 = get_post_meta($topics1->ID, 'case_url', true);
+            $topics_logo = get_post_meta($topics1->ID, 'case_logo', true);
+            $topics_logos = wp_get_attachment_image_src( $topics_logo , 'full' );
+            $topics_h1 = get_post_meta($topics1->ID, 'case_h1', true);
+            $topics_name = get_post_meta($topics1->ID, 'case_company_name', true);
+            $topics_service = get_post_meta($topics1->ID, 'service', true);
+            ?> 
+            <a class="case_study cell small-6 medium-4 large-3" href="<?php echo $topics_url_1; ?>">
+            <div class="img_area"> <img src="<?php echo $topics_logos[0]; ?>"></div>
             <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
+              <h3 class="page-title"><?php echo $topics_h1; ?></h3>
               <div class="case">
                 <p class="t_3">CASE：</p>
-                <p class="t_3">HOTEL JAL city 富山</p>
+                <p class="t_3"><?php echo $topics_name; ?></p>
               </div>
               <div class="service">
                 <p class="t_3">SERVICE：</p>
-                <p class="t_3">Vizu/メディアウェイブ光/knot/ease</p>
+                <p class="t_3">
+                  <?php 
+                  $tmp=$topics_service;
+                  foreach($topics_service as $topics_services){
+                    echo $topics_services;
+                    if(next($tmp)){
+                      echo ","; // 最後の要素ではないとき
+                    }
+                   } ?></p>
               </div>
             </div>
             </a> 
             <!-- 導入事例ここまで --> 
-            <!-- 導入事例 --> 
-            <a class="case_study cell small-6 medium-4 large-3" href="page.html">
-            <div class="img_area"> <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/makuhari_logo.png" alt=""> </div>
+            <!-- 導入事例2 -->
+            <?php 
+            $topics2 = get_field('topics2');
+            $topics_url_2 = get_post_meta($topics2->ID, 'case_url', true);
+            $topics_logo = get_post_meta($topics2->ID, 'case_logo', true);
+            $topics_logos = wp_get_attachment_image_src( $topics_logo , 'full' );
+            $topics_h1 = get_post_meta($topics2->ID, 'case_h1', true);
+            $topics_name = get_post_meta($topics2->ID, 'case_company_name', true);
+            $topics_service = get_post_meta($topics2->ID, 'service', true);
+            ?> 
+            <a class="case_study cell small-6 medium-4 large-3" href="<?php echo $topics_url_2; ?>">
+            <div class="img_area"> <img src="<?php echo $topics_logos[0]; ?>"></div>
             <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
+              <h3 class="page-title"><?php echo $topics_h1; ?></h3>
               <div class="case">
                 <p class="t_3">CASE：</p>
-                <p class="t_3">ホテルスプリングス幕張</p>
+                <p class="t_3"><?php echo $topics_name; ?></p>
               </div>
               <div class="service">
                 <p class="t_3">SERVICE：</p>
-                <p class="t_3">Vizu/メディアウェイブ光/knot/ease</p>
+                <p class="t_3">
+                  <?php 
+                  $tmp=$topics_service;
+                  foreach($topics_service as $topics_services){
+                    echo $topics_services;
+                    if(next($tmp)){
+                      echo ","; // 最後の要素ではないとき
+                    }
+                   } ?></p>
               </div>
             </div>
             </a> 
             <!-- 導入事例ここまで --> 
-            <!-- 導入事例 --> 
-            <a class="case_study cell small-6 medium-4 large-3" href="page.html">
-            <div class="img_area"> <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/case-study/kawasaki_logo.svg" alt=""> </div>
+            <!-- 導入事例3 -->
+            <?php 
+            $topics3 = get_field('topics3');
+            $topics_url_3 = get_post_meta($topics3->ID, 'case_url', true);
+            $topics_logo = get_post_meta($topics3->ID, 'case_logo', true);
+            $topics_logos = wp_get_attachment_image_src( $topics_logo , 'full' );
+            $topics_h1 = get_post_meta($topics3->ID, 'case_h1', true);
+            $topics_name = get_post_meta($topics3->ID, 'case_company_name', true);
+            $topics_service = get_post_meta($topics3->ID, 'service', true);
+            ?> 
+            <a class="case_study cell small-6 medium-4 large-3" href="<?php echo $topics_url_3; ?>">
+            <div class="img_area"> <img src="<?php echo $topics_logos[0]; ?>"></div>
             <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
+              <h3 class="page-title"><?php echo $topics_h1; ?></h3>
               <div class="case">
                 <p class="t_3">CASE：</p>
-                <p class="t_3">川崎日航ホテル「夜間飛行」</p>
+                <p class="t_3"><?php echo $topics_name; ?></p>
               </div>
               <div class="service">
                 <p class="t_3">SERVICE：</p>
-                <p class="t_3">Vizu/メディアウェイブ光/knot/ease/クリーニングボード</p>
+                <p class="t_3">
+                  <?php 
+                  $tmp=$topics_service;
+                  foreach($topics_service as $topics_services){
+                    echo $topics_services;
+                    if(next($tmp)){
+                      echo ","; // 最後の要素ではないとき
+                    }
+                   } ?></p>
               </div>
             </div>
             </a> 
             <!-- 導入事例ここまで --> 
-            <!-- 導入事例 --> 
-            <a class="case_study cell small-6 medium-4 large-3" href="page.html">
-            <div class="img_area"> <img src="<?php echo get_template_directory_uri(); ?>/images/case-study/case-study/shiosaitei_logo.png" alt=""> </div>
+            <!-- 導入事例4 -->
+            <?php 
+            $topics4 = get_field('topics4');
+            $topics_url_4 = get_post_meta($topics4->ID, 'case_url', true);
+            $topics_logo = get_post_meta($topics4->ID, 'case_logo', true);
+            $topics_logos = wp_get_attachment_image_src( $topics_logo , 'full' );
+            $topics_h1 = get_post_meta($topics4->ID, 'case_h1', true);
+            $topics_name = get_post_meta($topics4->ID, 'case_company_name', true);
+            $topics_service = get_post_meta($topics4->ID, 'service', true);
+            ?> 
+            <a class="case_study cell small-6 medium-4 large-3" href="<?php echo $topics_url_4; ?>">
+            <div class="img_area"> <img src="<?php echo $topics_logos[0]; ?>"></div>
             <div class="text_area">
-              <h3 class="page-title">しかし魂か曖昧か発見が据えたと、時間中手段の流れるが得るですためでご誘惑の昔を待ったた</h3>
+              <h3 class="page-title"><?php echo $topics_h1; ?></h3>
               <div class="case">
-                <p class="t_3">CASE：</p>
-                <p class="t_3">しおさい亭</p>
+                <p class="t_3">施設名：</p>
+                <p class="t_3"><?php echo $topics_name; ?></p>
               </div>
               <div class="service">
-                <p class="t_3">SERVICE：</p>
-                <p class="t_3">Vizu/メディアウェイブ光/knot/ease</p>
+                <p class="t_3">導入サービス：</p>
+                <p class="t_3">
+                  <?php 
+                  $tmp=$topics_service;
+                  foreach($topics_service as $topics_services){
+                    echo $topics_services;
+                    if(next($tmp)){
+                      echo ","; // 最後の要素ではないとき
+                    }
+                   } ?></p>
               </div>
             </div>
             </a> 

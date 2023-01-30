@@ -14,8 +14,8 @@
       <div class="container">
         <h1 class="section_title text-center">導入事例</h1>
         <!-- 検索リスト -->
-        <!-- 検索ボタン -->
-          <?php get_search_form(); ?>
+        
+        <?php get_search_form(); ?>
 
         <!-- 導入事例群 -->
         <div class="case_study_area grid-x">
@@ -36,10 +36,21 @@
             <div class="text_area">
               <h3 class="page-title"><?php the_field('case_h1'); ?></h3>
               <div class="case">
-                <p class="t_3">施設名：</p><p class="t_3"><?php the_field('case_company_name'); ?></p>
+                <p class="t_3">【施設名】</p><p class="t_3"><?php the_field('case_company_name'); ?></p>
               </div>
               <div class="service">
-                <p class="t_3">導入サービス：</p><p class="t_3"><?php the_field('service'); ?></p>
+                <p class="t_3">【導入サービス】</p>
+                <?php if( get_field('service') ) { ?>
+                <?php $services = get_field('service');?>
+                  <p class="t_3">
+                  <?php
+                $tmp = $services;
+                foreach ( (array)$services as $service ) { 
+                echo $service;
+                if(next($tmp)){
+                  echo ","; // 最後の要素ではないとき
+                } } ?></p>
+                <?php } ?>
               </div>
             </div>
           </a>

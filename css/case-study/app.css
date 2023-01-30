@@ -109,6 +109,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  margin-left: 5px;
 }
 .case_study_wrapper .container ul .box .list p {
   margin: 0;
@@ -275,10 +276,12 @@ img {
 .t_2 {
   font-size: 1.3em;
   line-height: 1.8;
+  vertical-align: 0.1em;
 }
 .t_3 {
   font-size: 1.1em;
   line-height: 1.8;
+  vertical-align: 0.1em;
 }
 .t_4 {
   font-size: 1.2em;
@@ -287,6 +290,26 @@ img {
 .t_5 {
   font-size: 1.8em;
   line-height: 1.8;
+}
+/* archive・searchページに指定 */
+.t_3_case {
+  width: 55px;
+}
+.t_3_service {
+  width: 90px;
+}
+.t_3_case_a {
+  width: 291px;
+}
+.t_3_service_a {
+  width: 256px;
+}
+/* トップページのみ指定 */
+.t_3_case_a_top {
+  width: 254px;
+}
+.t_3_service_a_top {
+  width: 219px;
 }
 .section_title {
   font-size: 2em;
@@ -347,9 +370,10 @@ img {
 .case_study_area .case_study .text_area .case, .case_study_area .case_study .text_area .service {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
+  display: block;
   font-weight: normal;
 }
+
 .case_study_area .case_study .text_area .case p, .case_study_area .case_study .text_area .service p {
   font-weight: normal;
 }
@@ -509,7 +533,29 @@ img {
   color: white;
   text-decoration: none;
 }
+.search_back_btn a {
+  font-family: Arial, Helvetica, sans-serif;
+  position: relative;
+  display: inline-block;
+  padding-left: 25px;
+  color: white;
+  text-decoration: none;
+}
 .page_wrapper .back_btn a::before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-top: solid 2px white;
+  border-left: solid 2px white;
+  position: absolute;
+  top: 33%;
+  left: 0;
+  margin-top: -4px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+.search_back_btn a::before {
   content: '';
   width: 20px;
   height: 20px;
@@ -593,6 +639,11 @@ img {
   -ms-flex-preferred-size: auto;
   flex-basis: auto;
 }
+.text_404 {
+  font-size: 1.8em;
+  color: white;
+}
+
 @media print, screen and (min-width: 40em) {
   .grid-x > .medium-shrink, .grid-x > .medium-full, .grid-x > .medium-1, .grid-x > .medium-2, .grid-x > .medium-3, .grid-x > .medium-4, .grid-x > .medium-5, .grid-x > .medium-6, .grid-x > .medium-7, .grid-x > .medium-8, .grid-x > .medium-9, .grid-x > .medium-10, .grid-x > .medium-11, .grid-x > .medium-12 {
     -webkit-flex-basis: auto;

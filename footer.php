@@ -67,12 +67,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stickyfill/2.1.0/stickyfill.min.js"></script>
 <script src="https://unpkg.com/muuri@0.8.0/dist/muuri.min.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
-<?php if( is_page('service') ||  is_post_type_archive('case-study')): ?>
+<?php if( is_page('service')  || is_post_type_archive('case-study')): ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/sort.js"></script>
 <?php endif; ?>
 <?php if(is_post_type_archive('case-study') ): ?>
 <script src="<?php echo get_template_directory_uri(); ?>/js/check.js"></script>
 <?php endif; ?>
+
 <!--<script>
 	$(window).on('load resize', function() {
 var windowWidth = window.innerWidth;

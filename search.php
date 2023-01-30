@@ -1,9 +1,10 @@
 <?php get_header(); ?>
 <?php
-    global $wp_query;
-    $total_results = $wp_query->found_posts;//該当件数を取得
-    $search_query = get_search_query();//検索キーワードを取得
-    query_posts($query_string.'&posts_per_page=10');//表示件数を指定
+    $selected_service = $_GET['service'];
+    $selected_task = $_GET['task'];
+    $selected_team = $_GET['team'];
+    $selected_room = $_GET['room'];
+    // var_dump($selected_service,$selected_task,$selected_team,$selected_room)
 ?>
   <!-- main -->
   <main class="l-main about-main" id="page">
@@ -20,18 +21,56 @@
       <div class="container">
         <h1 class="section_title text-center">導入事例検索結果</h1>
         <!-- 検索リスト -->
-
-        <!-- 導入事例群 -->
+        <?php get_search_form(); ?>
+        <!-- 導入事結果 -->
         <div class="case_study_area grid-x">
         <?php
-        $args = array(
+         $args = array(
+         
           'post_type' => 'case-study',
           'posts_per_page' => 6, // 取得数
+          'tax_query' => array(
+            'relation'  => 'AND',
+            array(
+             'taxonomy' => 'service',
+             'field' => 'slug',
+             'terms' => $selected_service,
+             'operator' => 'or',
+            ),
+            array(
+              'taxonomy' => 'task',
+              'field' => 'slug',
+              'terms' => $selected_task,
+              'operator' => 'or',
+             ),
+             array(
+              'taxonomy' => 'team',
+              'field' => 'slug',
+              'terms' => $selected_team,
+              'operator' => 'or',
+             ),
+             array(
+              'taxonomy' => 'room',
+              'field' => 'slug',
+              'terms' => $selected_room,
+              'operator' => 'AND',
+             ),
+          ),
+          // 'meta_query' => array(
+          //   array(
+          //   'key' => 'service',
+          //   'value' => $selected_service,
+          //   'compare' => '=',
+          //   ),
+          // ), 
           'paged' => get_query_var('paged') //追加事項　変数［paged］は「今、何ページ目？」という値を指定するものです。
         );
+
         $wp_query = new WP_Query( $args );
         if ( $wp_query->have_posts() ):
           while ( $wp_query->have_posts() ): $wp_query->the_post();
+          // $meta = get_post_meta( get_the_ID() );
+          // var_dump($meta);
         ?>
           <a class="case_study cell small-6 large-4" href="<?php the_field('case_url'); ?>">
             <div class="img_area">
@@ -40,19 +79,34 @@
             <div class="text_area">
               <h3 class="page-title"><?php the_field('case_h1'); ?></h3>
               <div class="case">
-                <p class="t_3">施設名：</p><p class="t_3"><?php the_field('case_company_name'); ?></p>
+                <p class="t_3">【施設名】</p><p class="t_3"><?php the_field('case_company_name'); ?></p>
               </div>
               <div class="service">
-                <p class="t_3">導入サービス：</p><p class="t_3"><?php the_field('service'); ?></p>
+              <p class="t_3">【導入サービス】</p>
+                <?php if( get_field('service') ) { ?>
+                <?php $services = get_field('service');?>
+                  <p class="t_3">
+                  <?php
+                $tmp = $services;
+                foreach ( (array)$services as $service ) { 
+                echo $service;
+                if(next($tmp)){
+                  echo ","; // 最後の要素ではないとき
+                } } ?></p>
+                <?php } ?>
               </div>
             </div>
           </a>
           <?php
         endwhile;
         wp_reset_postdata();
-        endif;
         ?>
-          <!-- 導入事例ここまで -->
+      <?php else: //検索結果0件だった場合の処理  ?>
+        <div class="text_404">
+		      <p>検索条件に一致する項目はありません。</p>
+	      </div>
+       <?php endif; ?>
+          <!-- 導入事例結果ここまで -->
         </div>
         
         <!-- ページネーション -->
@@ -66,19 +120,9 @@
          );
          the_posts_pagination($args);
          ?>
-          <!-- <li class="prev page_btn">
-            <a href="#"></a>
-          </li>
-          <li class="page_number"><a href="#">1</a></li>
-          <li class="active page_number"><a href="#">2</a></li>
-          <li class="page_number"><a href="#">3</a></li>
-          <li class="page_number"><a href="#">4</a></li>
-          <li class="page_number"><a href="#">5</a></li>
-          <li class="next page_btn">
-            <a href="#"></a>
-          </li> -->
         </ul>
-
+       <!-- 前のページへ戻る -->
+       <div class="search_back_btn text-center"> <a class="t_5" href="/case-study/">BACK</a> </div>
       </div>
     </section>
   </main>

@@ -25,7 +25,7 @@
 </head>
 
 <body>
-<?php if( is_post_type_archive('case-study') || is_singular('case-study')): ?>
+<?php if( is_post_type_archive('case-study') || is_search('search') || is_singular('case-study')): ?>
 <div id="wrapper" class="ccm-page page">
 <?php endif; ?>
 <div id="wrapper">

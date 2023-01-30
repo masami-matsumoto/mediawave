@@ -30,7 +30,7 @@
                 <?php if( get_field('room')){
                     $rooms = get_field('room');
                     foreach ( (array)$rooms as $room){
-                      echo $room['label'];
+                      echo $room;
                     }
                   }
                   ?>
@@ -43,7 +43,7 @@
                     $teams = get_field('team');
                     $tmp=$teams;
                     foreach ( (array)$teams as $team){
-                      echo $team['label'];
+                      echo $team;
                       if(next($tmp)){
                         echo ","; // 最後の要素ではないとき
                       }
@@ -58,7 +58,7 @@
                 <?php if( get_field('task') ) { ?> 
                   <?php $tasks = get_field('task');
                   foreach ( (array)$tasks as $task ) { ?>
-                  <p class="article_info_ans t_2"><?php echo $task['label']; ?></p>
+                  <p class="article_info_ans t_2"><?php echo $task; ?></p>
                   <?php } ?>
                   <?php } ?>
                 </div>
@@ -76,7 +76,7 @@
               <?php if( get_field('service') ) { ?> 
               <?php $checks = get_field('service');
               foreach ( (array)$checks as $check ) { ?>
-              <p class="tag t_2"><?php echo $check['label']; ?></p>
+              <p class="tag t_2"><?php echo $check; ?></p>
               <?php } ?>
               <?php } ?>
 
@@ -112,36 +112,49 @@
             <?php the_field('q&a_h1_1'); ?></h3>
             <?php if( get_field('q&a_1') ) { ?>
             <p>
-            <?php $qa_1 = get_field('q&a_1');   
-            the_field('case_name'); ?>さん__<?php echo $qa_1; 
-            ?></p>
+            <?php $qa_1 = get_field('q&a_1');  ?> 
+            <?php echo $qa_1; ?></p>
             <?php } ?>
             <br>
-            
+            <!-- 1_選択したQAイメージが入ります -->
+            <?php if( get_field('qa_image1') ) { ?>
+            <?php $qa_image1 = get_field('qa_image1'); ?>
+            <div class="article_top_img"> <img src="<?php echo $qa_image1; ?>" alt=""> </div>
+            <?php } ?>
+            <br>
             <?php if( get_field('q&a_h1_2') ) { ?>
             <h3><?php echo ＿＿; ?>
             <?php } ?>
             <?php the_field('q&a_h1_2'); ?></h3>
             <?php if( get_field('q&a_2') ) { ?>
             <p>
-            <?php $qa_2 = get_field('q&a_2');   
-            the_field('case_name'); ?>さん__<?php echo $qa_2; 
-            ?></p>
+            <?php $qa_2 = get_field('q&a_2'); ?> 
+            <?php echo $qa_2; ?>
+            </p>
             <?php } ?>
             <br>
-
+            <!-- 2_選択したQAイメージが入ります -->
+            <?php if( get_field('qa_image2') ) { ?>
+            <?php $qa_image2 = get_field('qa_image2'); ?>
+            <div class="article_top_img"> <img src="<?php echo $qa_image2; ?>" alt=""> </div>
+            <?php } ?>
+            <br>
             <?php if( get_field('q&a_h1_3') ) { ?>
             <h3><?php echo ＿＿; ?>
             <?php } ?>
             <?php the_field('q&a_h1_3'); ?></h3>
             <?php if( get_field('q&a_3') ) { ?>
             <p>
-            <?php $qa_3 = get_field('q&a_3');   
-            the_field('case_name'); ?>さん__<?php echo $qa_3; 
-            ?></p>
+            <?php $qa_3 = get_field('q&a_3'); ?>  
+            <?php echo $qa_3; ?>
+            </p>
             <?php } ?>
             <br>
-          </div>
+            <!-- 3_選択したQAイメージが入ります -->
+            <?php if( get_field('qa_image3') ) { ?>
+            <?php $qa_image3 = get_field('qa_image3'); ?>
+            <div class="article_top_img"> <img src="<?php echo $qa_image3; ?>" alt=""> </div>
+            <?php } ?>
         </article>
         
         <!-- 前のページへ戻る -->
@@ -168,11 +181,11 @@
             <div class="text_area">
               <h3 class="page-title"><?php echo $topics_h1; ?></h3>
               <div class="case">
-                <p class="t_3">CASE：</p>
+                <p class="t_3">【施設名】</p>
                 <p class="t_3"><?php echo $topics_name; ?></p>
               </div>
               <div class="service">
-                <p class="t_3">SERVICE：</p>
+                <p class="t_3">【導入サービス】</p>
                 <p class="t_3">
                   <?php 
                   $tmp=$topics_service;
@@ -201,11 +214,11 @@
             <div class="text_area">
               <h3 class="page-title"><?php echo $topics_h1; ?></h3>
               <div class="case">
-                <p class="t_3">CASE：</p>
+                <p class="t_3">【施設名】</p>
                 <p class="t_3"><?php echo $topics_name; ?></p>
               </div>
               <div class="service">
-                <p class="t_3">SERVICE：</p>
+                <p class="t_3">【導入サービス】</p>
                 <p class="t_3">
                   <?php 
                   $tmp=$topics_service;
@@ -234,11 +247,11 @@
             <div class="text_area">
               <h3 class="page-title"><?php echo $topics_h1; ?></h3>
               <div class="case">
-                <p class="t_3">CASE：</p>
+                <p class="t_3">【施設名】</p>
                 <p class="t_3"><?php echo $topics_name; ?></p>
               </div>
               <div class="service">
-                <p class="t_3">SERVICE：</p>
+                <p class="t_3">【導入サービス】</p>
                 <p class="t_3">
                   <?php 
                   $tmp=$topics_service;
@@ -267,11 +280,11 @@
             <div class="text_area">
               <h3 class="page-title"><?php echo $topics_h1; ?></h3>
               <div class="case">
-                <p class="t_3">施設名：</p>
+                <p class="t_3">【施設名】</p>
                 <p class="t_3"><?php echo $topics_name; ?></p>
               </div>
               <div class="service">
-                <p class="t_3">導入サービス：</p>
+                <p class="t_3">【導入サービス】</p>
                 <p class="t_3">
                   <?php 
                   $tmp=$topics_service;

@@ -19,7 +19,7 @@
               <div class="row">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" value="" id="checksAll" name="service[]">
-                  <label class="form-check-label t_3">すべての課題を選択</label>
+                  <label class="form-check-label t_3">すべてのサービスを選択</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks" type="checkbox" value="service01" id="" name="service[]">
@@ -27,23 +27,23 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks" type="checkbox" value="servise04" id="" name="service[]">
-                  <label class="form-check-label t_3"> ease</label>
+                  <label class="form-check-label t_3"> easeクラウド</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks" type="checkbox" value="service05" id="" name="service[]">
-                  <label class="form-check-label t_3"> knot</label>
+                  <label class="form-check-label t_3"> knotポータル</label>
                 </div>
-                <div class="form-check">
+                <!-- <div class="form-check">
                   <input class="form-check-input checks" type="checkbox" value="service02" id="" name="service[]">
                   <label class="form-check-label t_3"> Vizu</label>
-                </div>
+                </div> -->
                 <div class="form-check">
                   <input class="form-check-input checks" type="checkbox" value="service03" id="" name="service[]">
                   <label class="form-check-label t_3"> クリーニングボード</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks" type="checkbox" value="service06" id="" name="service[]">
-                  <label class="form-check-label t_3"> Wi-Fi環境構築</label>
+                  <label class="form-check-label t_3"> Wi-Fi/ネットワーク環境構築</label>
                 </div>
               </div>
             </div>
@@ -57,24 +57,24 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_2" type="checkbox" value="task01" id="" name="task[]">
-                  <label class="form-check-label t_3"> 地域の魅力を発信したい</label>
+                  <label class="form-check-label t_3"> 情報共有／業務効率化</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_2" type="checkbox" value="task02" id="" name="task[]">
-                  <label class="form-check-label t_3"> 館内付帯売上を上げたい</label>
+                  <label class="form-check-label t_3"> 作業負担／作業量の削減</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_2" type="checkbox" value="task03" id="" name="task[]">
-                  <label class="form-check-label t_3"> 館内Wi-Fiを快適な速度にしたい</label>
+                  <label class="form-check-label t_3"> 館内インフラ設備の最適化</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_2" type="checkbox" value="task04" id="" name="task[]">
-                  <label class="form-check-label t_3"> 客室清掃の効率を上げたい</label>
+                  <label class="form-check-label t_3"> 館内施設の利用率/売上向上</label>
                 </div>
-                <div class="form-check">
+                <!-- <div class="form-check">
                   <input class="form-check-input checks_2" type="checkbox" value="task05" id="" name="task[]">
                   <label class="form-check-label t_3"> 3密回避システムを導入したい</label>
-                </div>
+                </div> -->
               </div>
             </div>
             
@@ -88,11 +88,11 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_3" type="checkbox" value="team03" id="" name="team[]">
-                  <label class="form-check-label t_3"> 宴会</label>
+                  <label class="form-check-label t_3"> 宿泊</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_3" type="checkbox" value="team01" id="" name="team[]">
-                  <label class="form-check-label t_3"> 宿泊</label>
+                  <label class="form-check-label t_3"> 設備</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_3" type="checkbox" value="team02" id="" name="team[]">
@@ -100,11 +100,19 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_3" type="checkbox" value="team04" id="" name="team[]">
-                  <label class="form-check-label t_3"> 管理・営業</label>
+                  <label class="form-check-label t_3"> マーケティング</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_3" type="checkbox" value="team05" id="" name="team[]">
-                  <label class="form-check-label t_3"> 調理</label>
+                  <label class="form-check-label t_3"> 管理</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input checks_3" type="checkbox" value="team05" id="" name="team[]">
+                  <label class="form-check-label t_3"> 清掃</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input checks_3" type="checkbox" value="team05" id="" name="team[]">
+                  <label class="form-check-label t_3"> その他</label>
                 </div>
               </div>
             </div>
@@ -115,7 +123,7 @@
               <div class="row">
                 <div class="form-check">
                   <input class="form-check-input" type="radio" value="room01" id="" name="room[]">
-                  <label class="form-check-label t_3"> 〜100室</label>
+                  <label class="form-check-label t_3"> 100室未満</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" value="room02" id="" name="room[]">
@@ -127,7 +135,7 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input" type="radio" value="room04" id="" name="room[]">
-                  <label class="form-check-label t_3"> 〜3000室</label>
+                  <label class="form-check-label t_3"> 1000室以上</label>
                 </div>
               </div>
             </div>

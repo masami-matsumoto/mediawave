@@ -119,7 +119,7 @@
             <!-- 1_選択したQAイメージが入ります -->
             <?php if( get_field('qa_image1') ) { ?>
             <?php $qa_image1 = get_field('qa_image1'); ?>
-            <div class="article_top_img"> <img src="<?php echo $qa_image1; ?>" alt=""> </div>
+            <div class="article_body_img"> <img src="<?php echo $qa_image1; ?>" alt=""> </div>
             <?php } ?>
             <br>
             <?php if( get_field('q&a_h1_2') ) { ?>
@@ -136,7 +136,7 @@
             <!-- 2_選択したQAイメージが入ります -->
             <?php if( get_field('qa_image2') ) { ?>
             <?php $qa_image2 = get_field('qa_image2'); ?>
-            <div class="article_top_img"> <img src="<?php echo $qa_image2; ?>" alt=""> </div>
+            <div class="article_body_img"> <img src="<?php echo $qa_image2; ?>" alt=""> </div>
             <?php } ?>
             <br>
             <?php if( get_field('q&a_h1_3') ) { ?>
@@ -153,7 +153,7 @@
             <!-- 3_選択したQAイメージが入ります -->
             <?php if( get_field('qa_image3') ) { ?>
             <?php $qa_image3 = get_field('qa_image3'); ?>
-            <div class="article_top_img"> <img src="<?php echo $qa_image3; ?>" alt=""> </div>
+            <div class="article_body_img"> <img src="<?php echo $qa_image3; ?>" alt=""> </div>
             <?php } ?>
         </article>
         

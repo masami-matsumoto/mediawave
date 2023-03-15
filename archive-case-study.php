@@ -36,20 +36,20 @@
             <div class="text_area">
               <h3 class="page-title"><?php the_field('case_h1'); ?></h3>
               <div class="case">
-                <p class="t_3">【施設名】</p><p class="t_3"><?php the_field('case_company_name'); ?></p>
+                <p class="t_3">▼ &nbsp;施設名</p>
+                <p class="t_3">・&nbsp;<?php the_field('case_company_name'); ?></p>
               </div>
               <div class="service">
-                <p class="t_3">【導入サービス】</p>
+                <p class="t_3">▼ &nbsp;導入サービス</p>
                 <?php if( get_field('service') ) { ?>
                 <?php $services = get_field('service');?>
                   <p class="t_3">
                   <?php
                 $tmp = $services;
-                foreach ( (array)$services as $service ) { 
-                echo $service;
-                if(next($tmp)){
-                  echo ","; // 最後の要素ではないとき
-                } } ?></p>
+                foreach ( (array)$services as $service ) { ?>
+                <p>・&nbsp;<?php echo $service; ?></p>
+                <!-- // if(next($tmp)){ echo ","; }  最後の要素ではないとき -->
+                <?php } ?></p>
                 <?php } ?>
               </div>
             </div>

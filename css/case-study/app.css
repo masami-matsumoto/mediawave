@@ -194,12 +194,16 @@
 .case_study_wrapper .container .tag-submit input {
   display: inline-block;
   width: 70px;
+  cursor: pointer;
   color: white;
   background-color: #016321;
   padding: 10px 0;
   border: 0.5px solid white;
   border-radius: 0.4rem;
   margin-top: 30px;
+}
+.case_study_wrapper .container .tag-submit input:hover {
+  opacity:0.6
 }
 .search_wrapper {
   margin-top: 70px;
@@ -310,6 +314,11 @@ img {
 }
 .t_3_service_a_top {
   width: 219px;
+}
+.tag_t_3 {
+  padding: 8px 20px;
+  border: 0.5px solid white;
+  margin-bottom: 10px;
 }
 .section_title {
   font-size: 2em;
@@ -453,6 +462,12 @@ img {
   width: 90%;
   max-width: 600px;
   margin: 0 auto 50px;
+}
+.page_wrapper .article_body_img {
+  position: relative;
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .page_wrapper article .article_top_img::before {
   content: "";

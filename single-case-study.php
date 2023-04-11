@@ -176,6 +176,7 @@
             $topics_name = get_post_meta($topics1->ID, 'case_company_name', true);
             $topics_service = get_post_meta($topics1->ID, 'service', true);
             ?> 
+            <?php if(get_field('topics1')):?>
             <a class="case_study cell small-6 medium-4 large-3" href="<?php echo $topics_url_1; ?>">
             <div class="img_area"> <img src="<?php echo $topics_logos[0]; ?>"></div>
             <div class="text_area">
@@ -198,6 +199,7 @@
               </div>
             </div>
             </a> 
+            <?php endif; ?>
             <!-- 導入事例ここまで --> 
             <!-- 導入事例2 -->
             <?php 
@@ -209,6 +211,7 @@
             $topics_name = get_post_meta($topics2->ID, 'case_company_name', true);
             $topics_service = get_post_meta($topics2->ID, 'service', true);
             ?> 
+            <?php if(get_field('topics2')):?>
             <a class="case_study cell small-6 medium-4 large-3" href="<?php echo $topics_url_2; ?>">
             <div class="img_area"> <img src="<?php echo $topics_logos[0]; ?>"></div>
             <div class="text_area">
@@ -231,6 +234,7 @@
               </div>
             </div>
             </a> 
+            <?php endif; ?>
             <!-- 導入事例ここまで --> 
             <!-- 導入事例3 -->
             <?php 
@@ -242,6 +246,7 @@
             $topics_name = get_post_meta($topics3->ID, 'case_company_name', true);
             $topics_service = get_post_meta($topics3->ID, 'service', true);
             ?> 
+            <?php if(get_field('topics3')):?>
             <a class="case_study cell small-6 medium-4 large-3" href="<?php echo $topics_url_3; ?>">
             <div class="img_area"> <img src="<?php echo $topics_logos[0]; ?>"></div>
             <div class="text_area">
@@ -264,6 +269,7 @@
               </div>
             </div>
             </a> 
+            <?php endif; ?>
             <!-- 導入事例ここまで --> 
             <!-- 導入事例4 -->
             <?php 
@@ -275,6 +281,7 @@
             $topics_name = get_post_meta($topics4->ID, 'case_company_name', true);
             $topics_service = get_post_meta($topics4->ID, 'service', true);
             ?> 
+            <?php if(get_field('topics4')):?>
             <a class="case_study cell small-6 medium-4 large-3" href="<?php echo $topics_url_4; ?>">
             <div class="img_area"> <img src="<?php echo $topics_logos[0]; ?>"></div>
             <div class="text_area">
@@ -297,6 +304,7 @@
               </div>
             </div>
             </a> 
+            <?php endif; ?>
             <!-- 導入事例ここまで --> 
           </div>
         </div>

@@ -4,7 +4,6 @@
     $selected_task = $_GET['task'];
     $selected_team = $_GET['team'];
     $selected_room = $_GET['room'];
-    // var_dump($selected_service,$selected_task,$selected_team,$selected_room)
 ?>
   <!-- main -->
   <main class="l-main about-main" id="page">
@@ -25,29 +24,34 @@
         <!-- 導入事結果 -->
         <div class="case_study_area grid-x">
         <?php
+        $paged = get_query_var("paged") ? get_query_var("paged") : 1;
          $args = array(
          
           'post_type' => 'case-study',
           'posts_per_page' => 6, // 取得数
+          'paged' => $paged,
           'tax_query' => array(
             'relation'  => 'AND',
+            array(
+              'relation' => 'OR',
             array(
              'taxonomy' => 'service',
              'field' => 'slug',
              'terms' => $selected_service,
-             'operator' => 'or',
+             'operator' => 'IN',
             ),
             array(
               'taxonomy' => 'task',
               'field' => 'slug',
               'terms' => $selected_task,
-              'operator' => 'or',
+              'operator' => 'IN',
              ),
+            ),
              array(
               'taxonomy' => 'team',
               'field' => 'slug',
               'terms' => $selected_team,
-              'operator' => 'or',
+              'operator' => 'IN',
              ),
              array(
               'taxonomy' => 'room',
@@ -63,14 +67,12 @@
           //   'compare' => '=',
           //   ),
           // ), 
-          'paged' => get_query_var('paged') //追加事項　変数［paged］は「今、何ページ目？」という値を指定するものです。
         );
 
         $wp_query = new WP_Query( $args );
         if ( $wp_query->have_posts() ):
           while ( $wp_query->have_posts() ): $wp_query->the_post();
           // $meta = get_post_meta( get_the_ID() );
-          // var_dump($meta);
         ?>
           <a class="case_study cell small-6 large-4" href="<?php the_field('case_url'); ?>">
             <div class="img_area">
@@ -99,6 +101,19 @@
           </a>
           <?php
         endwhile;
+        $big = 999999999; // need an unlikely integer
+$pagination_args = array(
+  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+  'format' => '?paged=%#%',
+  'current' => max( 1, get_query_var('paged') ),
+  'total' => $wp_query->max_num_pages,
+  'prev_next' => true,
+  'prev_text' => '<<',
+  'next_text' => '>>',
+);
+echo '<div class="pagination">';
+echo paginate_links( $pagination_args );
+echo '</div>';
         wp_reset_postdata();
         ?>
       <?php else: //検索結果0件だった場合の処理  ?>
@@ -113,10 +128,12 @@
         <ul class="news-pagenation">
         <?php
         $args = array(
-        'mid_size' => 1, 
+        'mid_size' => 2, 
         'prev_text' => '<', 
         'next_text' => '> ', 
         'screen_reader_text' => ' ', 
+        'total'     => $wp_query->max_num_pages,
+        'current'   => $paged,
          );
          the_posts_pagination($args);
          ?>

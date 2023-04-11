@@ -53,8 +53,8 @@ get_header();
       <ul class="grid">
 		  
 		  <?php
-		  $parent_id = get_the_ID();
 		  $args = array(
+    'category_name' => 'brand',
 		'posts_per_page' => -1,
 		'post_type' => 'page',
 		'orderby' => 'menu_order',

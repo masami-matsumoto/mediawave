@@ -18,7 +18,7 @@
             <div id="serviceList" class="list">
               <div class="row">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="checksAll" name="service[]">
+                  <input class="form-check-input" type="checkbox" id="checksAll">
                   <label class="form-check-label t_3">すべてのサービスを選択</label>
                 </div>
                 <div class="form-check">
@@ -52,16 +52,16 @@
             <div id="taskList" class="list">
               <div class="row">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="checksAll_2" name="task">
+                  <input class="form-check-input" type="checkbox" id="checksAll_2">
                   <label class="form-check-label t_3"> すべての課題を選択</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_2" type="checkbox" value="task01" id="" name="task[]">
-                  <label class="form-check-label t_3"> 情報共有／業務効率化</label>
+                  <label class="form-check-label t_3"> 情報共有/業務効率化</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_2" type="checkbox" value="task02" id="" name="task[]">
-                  <label class="form-check-label t_3"> 作業負担／作業量の削減</label>
+                  <label class="form-check-label t_3"> 作業負担/作業量の削減</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_2" type="checkbox" value="task03" id="" name="task[]">
@@ -83,7 +83,7 @@
               <p class="t_2">部署：</p>
               <div class="row">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="checksAll_3" name="team">
+                  <input class="form-check-input" type="checkbox" id="checksAll_3">
                   <label class="form-check-label t_3"> すべての部署を選択</label>
                 </div>
                 <div class="form-check">
@@ -96,7 +96,7 @@
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_3" type="checkbox" value="team02" id="" name="team[]">
-                  <label class="form-check-label t_3"> 料飲</label>
+                  <label class="form-check-label t_3"> 飲料</label>
                 </div>
                 <div class="form-check">
                   <input class="form-check-input checks_3" type="checkbox" value="team04" id="" name="team[]">
@@ -107,11 +107,11 @@
                   <label class="form-check-label t_3"> 管理</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input checks_3" type="checkbox" value="team05" id="" name="team[]">
+                  <input class="form-check-input checks_3" type="checkbox" value="team06" id="" name="team[]">
                   <label class="form-check-label t_3"> 清掃</label>
                 </div>
                 <div class="form-check">
-                  <input class="form-check-input checks_3" type="checkbox" value="team05" id="" name="team[]">
+                  <input class="form-check-input checks_3" type="checkbox" value="team07" id="" name="team[]">
                   <label class="form-check-label t_3"> その他</label>
                 </div>
               </div>

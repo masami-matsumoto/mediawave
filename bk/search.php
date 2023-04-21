@@ -106,14 +106,12 @@
         <div class="text_404">
 		      <p>検索条件に一致する項目はありません。</p>
 	      </div>
-       <?php wp_reset_postdata();
-      endif; 
-        ?>
+       <?php endif; ?>
           <!-- 導入事例結果ここまで -->
         </div>
         
         <!-- ページネーション -->
-        <ul class="news-pagenation">
+        <!-- <ul class="news-pagenation">
         <?php
         $args = array(
         'mid_size' => 2, 
@@ -125,7 +123,7 @@
          );
          the_posts_pagination($args);
          ?>
-        </ul>
+        </ul> -->
        <!-- 前のページへ戻る -->
        <div class="search_back_btn text-center"> <a class="t_5" href="/case-study/">BACK</a> </div>
       </div>

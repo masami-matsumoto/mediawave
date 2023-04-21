@@ -1,4 +1,4 @@
-<form role="search" method="get" id="searchform" action="<?php echo home_url('/'); ?>">
+<form role="search" method="get" id="searchform" action="<?php echo home_url('/case-study/'); ?>">
 <input type="hidden" name="post_type" value="case-study">
 <ul>
           <p class="t_2 title btn text-center">導入事例を検索する</p>

@@ -76,7 +76,7 @@ get_header();
                 <div class="panel-blands">
                   <h4>所属商品</h4>
                   <!--<div class="panel-blands-img"><a href="<?php echo get_template_directory_uri(); ?>/service/ease/"><img src="<?php echo get_template_directory_uri(); ?>/images/ease.png" width="793" height="188" alt=""/></a></div> -->
-                  <div class="panel-blands-img"><a href="<?php echo get_template_directory_uri(); ?>/service/hikari/"><img src="<?php echo get_template_directory_uri(); ?>/images/hm_hikari.png" width="3123" height="639" alt=""/></a></div>
+                  <div class="panel-blands-img"><a href="/hikari/"><img src="<?php echo get_template_directory_uri(); ?>/images/hm_hikari.png" width="3123" height="639" alt=""/></a></div>
                 </div>
               </div>
             </div>
@@ -94,7 +94,7 @@ get_header();
                 <p class="media__text">スタッフのお一人お一人がゲストへ届けたい想い、ゲストを想い考えたイベントや館内のこだわり・・。目に見えない想いをカタチにし、演出するためのツールと、想いが伝わったその結果CS向上やファン顧客獲得へつながるような運用をデータ分析を用いてサポートいたします。 </p>
                 <div class="panel-blands">
                   <h4>所属商品</h4>
-                  <div class="panel-blands-img"><a href="<?php echo get_template_directory_uri(); ?>/service/vizu/"><img src="<?php echo get_template_directory_uri(); ?>/images/vizu.png" width="793" height="188" alt=""/></a></div>
+                  <div class="panel-blands-img"><a href="/vizu/"><img src="<?php echo get_template_directory_uri(); ?>/images/vizu.png" width="793" height="188" alt=""/></a></div>
                 </div>
               </div>
             </div>
@@ -113,8 +113,8 @@ get_header();
                   誰でも分かりやすく、だれでも使いやすいツールで解決し、便利と快適を実現します。</p>
                 <div class="panel-blands">
                   <h4>所属商品</h4>
-                 <!-- <div class="panel-blands-img"><a href="<?php echo get_template_directory_uri(); ?>/service/knot/"><img src="<?php echo get_template_directory_uri(); ?>/images/knot.png" width="793" height="188" alt=""/></a></div> -->
-                  <div class="panel-blands-img"><a href="<?php echo get_template_directory_uri(); ?>/service/cleaningbord/"><img src="<?php echo get_template_directory_uri(); ?>/images/cb.png" width="793" height="188" alt=""/></a></div>
+                 <!-- <div class="panel-blands-img"><a href="/knot/"><img src="<?php echo get_template_directory_uri(); ?>/images/knot.png" width="793" height="188" alt=""/></a></div> -->
+                  <div class="panel-blands-img"><a href="/cleaningbord/"><img src="<?php echo get_template_directory_uri(); ?>/images/cb.png" width="793" height="188" alt=""/></a></div>
                 </div>
               </div>
             </div>
@@ -133,7 +133,7 @@ get_header();
                   日常の少しの疑問や不安の解決から、万一の大きな障害の対応まで、専門知識を持ったチームがサポートし、安定したネットワーク稼働でスタッフのみなさまへ安心を提供します。</p>
                 <div class="panel-blands">
                   <h4>所属商品</h4>
-                  <div class="panel-blands-img"><a href="<?php echo get_template_directory_uri(); ?>/service/chotii/"><img src="<?php echo get_template_directory_uri(); ?>/images/CHOTII_logo_line.png" width="793" height="188" alt=""/></a></div>
+                  <div class="panel-blands-img"><a href="/chotii/"><img src="<?php echo get_template_directory_uri(); ?>/images/CHOTII_logo_line.png" width="793" height="188" alt=""/></a></div>
                 </div>
               </div>
             </div>
@@ -151,8 +151,8 @@ get_header();
                 <p class="media__text">宿泊施設に特化し、サービス提供を行う事で得た知識やノウハウを生かし、現地調査を行った上で機器選定から設置・設定までトータルで対応いたします。</p>
                 <div class="panel-blands">
                   <h4>対応内容</h4>
-                  <div class="panel-blands-img"><a href="<?php echo get_template_directory_uri(); ?>/service/wifi/"><img src="<?php echo get_template_directory_uri(); ?>/images/wi-fi.png" width="793" height="188" alt=""/></a></div>
-                  <div class="panel-blands-img"><a href="<?php echo get_template_directory_uri(); ?>/service/wifi/"><img src="<?php echo get_template_directory_uri(); ?>/images/tv.png" width="793" height="188" alt=""/></a></div>
+                  <div class="panel-blands-img"><a href="/wifi/"><img src="<?php echo get_template_directory_uri(); ?>/images/wi-fi.png" width="793" height="188" alt=""/></a></div>
+                  <div class="panel-blands-img"><img src="<?php echo get_template_directory_uri(); ?>/images/tv.png" width="793" height="188" alt=""/></div>
                 </div>
               </div>
             </div>

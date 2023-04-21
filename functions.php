@@ -80,7 +80,9 @@ function original_pagenation(){
 
 function searchFilter($query){
   if(!is_admin() && $query->is_main_query() && $query->is_search()){
-    $query->set('post_type','post');
+    $query->set('post_type','case-study');
+    $query->set('posts_per_page',6);
+    $query->set('paged', ( get_query_var('paged') ) ? get_query_var('paged') : 1 );
   }
 }
 

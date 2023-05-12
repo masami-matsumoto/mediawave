@@ -53,6 +53,8 @@ get_header();
       <ul class="grid">
 		  
 		  <?php
+       // ループ処理の前に wp_reset_query() を追加
+    wp_reset_query();
 		  $args = array(
     'category_name' => 'brand',
 		'posts_per_page' => -1,

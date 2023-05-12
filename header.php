@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="Description" content="<?php bloginfo( 'description' ); ?>" />	
-<title><?php bloginfo( 'name' ); ?></title>
+<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 <meta name="description" content="template">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="format-detection" content="telephone=no">

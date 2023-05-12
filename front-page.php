@@ -178,9 +178,11 @@ get_header();
       </colgroup>
       <tbody>
         <?php
+        // ループ処理の前に wp_reset_query() を追加
+        wp_reset_query();
         $args = array(
           'post_type' => 'post',
-          'caregory_name' => 'news',
+          'category_name' => 'news',
           'posts_per_page' => 3,
         );
         $news_posts = new WP_Query( $args );
@@ -211,6 +213,8 @@ get_header();
     <div class="case_study_area grid-x">
       <!-- 導入事例 -->
     <?php
+    // ループ処理の前に wp_reset_query() を追加
+    wp_reset_query();
         $args = array(
           'post_type' => 'case-study',
           'posts_per_page' => 3, // 取得数

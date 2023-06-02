@@ -11,12 +11,12 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/case-study/app.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/base/default.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/layout/default.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/module/modules.css">
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/module/c-module.css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/parts/parts.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/module/c-module.css">
+<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/case-study/app.css">
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/favicon.ico">
 <link rel="apple-touch-icon" href="<?php echo get_template_directory_uri(); ?>/images/apple-touch-icon.png">
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/images/android-icon.png">

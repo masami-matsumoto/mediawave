@@ -11,8 +11,8 @@ get_header();
         <h2 class="section-title"><span class="section-title__inner">Service</span></h2>
         <p class="section-subtitle">サービス一覧</p>
       </header>
-      <p>「As Associate」=「仕事仲間であり、頼れるプロの同僚であり、共同経営者である」<br>という当社の提供価値を実現させるため宿泊業界で働く方の課題解決という視点とサービスを通じてお届けしたい想いをもとに4つのサービスコンセプトカテゴリを設定しサービス展開を行っています。</p>
-      <ul class="sort-btn">
+      <p class="section-header">「As Associate」=「仕事仲間であり、頼れるプロの同僚であり、共同経営者である」<br>という当社の提供価値を実現させるため宿泊業界で働く方の課題解決という視点とサービスを通じてお届けしたい想いをもとに4つのサービスコンセプトカテゴリを設定しサービス展開を行っています。</p>
+      <!-- <ul class="sort-btn">
         <li class="sort-btn__item">
           <dl>
             <dt>All</dt>
@@ -47,11 +47,11 @@ get_header();
               </ul>
             </dd>
           </dl>
-        </li>
+        </li> -->
         <!--/sort-btn-->
-      </ul>
-      <ul class="grid">
-		  
+      <!-- </ul> -->
+      
+		  <div class="l-multicolumn l-3column">
 		  <?php
        // ループ処理の前に wp_reset_query() を追加
     wp_reset_query();
@@ -69,17 +69,10 @@ get_header();
 		  while($common_pages->have_posts()):$common_pages->the_post();
 		  ?>
 		  
-		  <li class="item<?php
-          $categories = get_the_category();
-          if ( $categories ){
-	      foreach ( $categories as $category ){
-		  echo ' '.$category->slug;
-		  }
-		  }
-          ?>">
+		  <article class="l-column pick-up">
 		  
           <div class="item-content"> <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a></div>
-        </li>
+        </article>
 		  
 		  <?php
 		  endwhile;
@@ -87,7 +80,7 @@ get_header();
 		  endif;
 		  ?>
 		  
-      </ul>
+    </div>
     </section>
   </main>
   <?php get_footer(); ?>

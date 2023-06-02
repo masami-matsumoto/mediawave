@@ -70,9 +70,9 @@ get_header();
         </section>
       </div>
 		<div class="service-btn-wrap">
-		<p class="service-btn-area">
+		<!-- <p class="service-btn-area">
 			 <a class="btn btn_highlighted" href="/service/" rel="noopener">サービス一覧に戻る</a>
-		</p>
+		</p> -->
 		 <p class="service-btn-area">
 			 <a class="btn btn_highlighted" href="https://mediawave.co.jp/service/lp/vizu/" target="_blank" rel="noopener">プラン詳細等詳しくはコチラ</a>
 		</p>

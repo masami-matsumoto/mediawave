@@ -97,14 +97,14 @@ function delayScrollAnime() {
 /*===========================================================*/
 /* アコーディオンをクリックした時の動作*/
 /*===========================================================*/
-$('.title').on('click', function() {//タイトル要素をクリックしたら
-  var findElm = $(this).next(".box");//直後のアコーディオンを行うエリアを取得し
-  $(findElm).slideToggle();//アコーディオンの上下動作
-    
-  if($(this).hasClass('close')){//タイトル要素にクラス名closeがあれば
-    $(this).removeClass('close');//クラス名を除去し
-  }else{//それ以外は
-    $(this).addClass('close');//クラス名closeを付与
+$('.title').on('click', function () { //タイトル要素をクリックしたら
+  var findElm = $(this).next(".box"); //直後のアコーディオンを行うエリアを取得し
+  $(findElm).slideToggle(); //アコーディオンの上下動作
+
+  if ($(this).hasClass('close')) { //タイトル要素にクラス名closeがあれば
+    $(this).removeClass('close'); //クラス名を除去し
+  } else { //それ以外は
+    $(this).addClass('close'); //クラス名closeを付与
   }
 });
 /*===========================================================*/
@@ -124,182 +124,83 @@ function fadeAnime() {
       $(this).removeClass('smooth'); // 画面外に出たらsmoothというクラス名を外す
     }
   });
-}
-/*===========================================================*/
-/* テキストの動き */
-/*===========================================================*/
-function SmoothTextAnime() {
-  $('.smoothTextTrigger').each(function () {
-    var elemPos = $(this).offset().top - 50;
+
+  $('.bgLRextendTrigger').each(function () { //bgLRextendTriggerというクラス名が
+    var elemPos = $(this).offset().top - 50; //要素より、50px上の
     var scroll = $(window).scrollTop();
-    var windowHeigth = $(window).height();
-    if (scroll >= elemPos - windowHeigth) {
-      $(this).addClass('smoothTextAppear');
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('bgLRextend'); // 画面内に入ったらbgLRextendというクラス名を追記
     } else {
-      $(this).removeClass('smoothTextAppear');
+      $(this).removeClass('bgLRextend'); // 画面外に出たらbgLRextendというクラス名を外す
+    }
+  });
+  $('.bgappearTrigger').each(function () { //bgappearTriggerというクラス名が
+    var elemPos = $(this).offset().top - 50; //要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('bgappear'); // 画面内に入ったらbgappearというクラス名を追記
+    } else {
+      $(this).removeClass('bgappear'); // 画面外に出たらbgappearというクラス名を外す
+    }
+  });
+  // 4-1 ふわっ（下から）
+  $('.fadeUpTrigger').each(function () { //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top - 50; //要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('fadeUp'); // 画面内に入ったらfadeUpというクラス名を追記
+    } else {
+      $(this).removeClass('fadeUp'); // 画面外に出たらfadeUpというクラス名を外す
+    }
+  });
+
+  // ふわっ
+
+  $('.fadeInTrigger').each(function () { //fadeInTriggerというクラス名が
+    var elemPos = $(this).offset().top - 50; //要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass('fadeIn'); // 画面内に入ったらfadeInというクラス名を追記
+    } else {
+      $(this).removeClass('fadeIn'); // 画面外に出たらfadeInというクラス名を外す
     }
   });
 }
-/*===========================================================*/
-/* 関数をまとめる*/
-/*===========================================================*/
-
-// 画面をスクロールをしたら動かしたい場合の記述
-$(window).scroll(function () {
-  PageTopAnime(); /* スクロールした際の動きの関数を呼ぶ*/
-  delayScrollAnime();
-  fadeAnime(); //印象編 4 最低限おぼえておきたい動きの関数を呼ぶ
-  SmoothTextAnime();
-});
-
-// ページが読み込まれたらすぐに動かしたい場合の記述
-$(window).on('load', function () {
-  PageTopAnime(); /* スクロールした際の動きの関数を呼ぶ*/
-  delayScrollAnime();
-  fadeAnime(); //印象編 4 最低限おぼえておきたい動きの関数を呼ぶ
-  SmoothTextAnime();
-}); // ここまでページが読み込まれたらすぐに動かしたい場合の記述
-
-// ページが読み込まれたらすぐに動かしたい場合の記述
-/*===========================================================*/
-  /*【MW Form】ラジオボタンの選択項目によって分岐*/
   /*===========================================================*/
-$(function() {
-     $('[name="select"]:radio').change( function() {
-         var result = $("input[name='select']:checked").val(); 
-         if(result === '商品に関するお問い合わせ'){ //商品に関するお問い合わせを選んだ場合
-                $('.acd-content').css('display','block');
-         } else if (result === 'その他') { //その他を選んだ場合
-                $('.acd-content').css('display','none');
-         }
-     }).trigger('change');
-  });
-
-/*===========================================================*/
-  /*全てにチェックを入れるチェックボックス*/
+  /* テキストの動き */
   /*===========================================================*/
-  // 【サービス名から絞り込む】
-const checkall = document.getElementById("checksAll");
-const checks = document.querySelectorAll(".checks");
-// 全て選択のチェックボックスがクリックされた時
-checkall.addEventListener('click', () => {
-  for (val of checks) {
-    checkall.checked == true ? val.checked = true : val.checked = false;
+  function SmoothTextAnime() {
+    $('.smoothTextTrigger').each(function () {
+      var elemPos = $(this).offset().top - 50;
+      var scroll = $(window).scrollTop();
+      var windowHeigth = $(window).height();
+      if (scroll >= elemPos - windowHeigth) {
+        $(this).addClass('smoothTextAppear');
+      } else {
+        $(this).removeClass('smoothTextAppear');
+      }
+    });
   }
-});
-// 全て選択のチェックボックスがタッチされた時
-checkall.addEventListener('touchstart', () => {
-  for (val of checks) {
-    checkall.checked == true ? val.checked = true : val.checked = false;
-  }
-});
-// 個別のチェックボックスがクリックされた時
-checks.forEach(element => {
-  element.addEventListener('click', () => {
-    // チェックが1つでも外された時
-    if (element.checked == false) {
-      checkall.checked = false;
-    }
-    // 全てにチェックがされた時
-    if (document.querySelectorAll(".checks:checked").length == checks.length) {
-      checkall.checked = true;
-    }
-  });
-});
-// 個別のチェックボックスがタッチされた時
-checks.forEach(element => {
-  element.addEventListener('touchstart', () => {
-    // チェックが1つでも外された時
-    if (element.checked == false) {
-      checkall.checked = false;
-    }
-    // 全てにチェックがされた時
-    if (document.querySelectorAll(".checks:checked").length == checks.length) {
-      checkall.checked = true;
-    }
-  });
-});
+  /*===========================================================*/
+  /* 関数をまとめる*/
+  /*===========================================================*/
 
-// 【部署名から絞り込む】
-const checkall_2 = document.getElementById("checksAll_2");
-const checks_2 = document.querySelectorAll(".checks_2");
-// 全て選択のチェックボックスがクリックされた時
-checkall_2.addEventListener('click', () => {
-  for (val of checks_2) {
-    checkall_2.checked == true ? val.checked = true : val.checked = false;
-  }
-});
-// 全て選択のチェックボックスがタッチされた時
-checkall_2.addEventListener('touchstart', () => {
-  for (val of checks_2) {
-    checkall_2.checked == true ? val.checked = true : val.checked = false;
-  }
-});
-// 個別のチェックボックスがクリックされた時
-checks_2.forEach(element => {
-  element.addEventListener('click', () => {
-    // チェックが1つでも外された時
-    if (element.checked == false) {
-      checkall_2.checked = false;
-    }
-    // 全てにチェックがされた時
-    if (document.querySelectorAll(".checks_2:checked").length == checks_2.length) {
-      checkall_2.checked = true;
-    }
+  // 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function () {
+    PageTopAnime(); /* スクロールした際の動きの関数を呼ぶ*/
+    delayScrollAnime();
+    fadeAnime(); //印象編 4 最低限おぼえておきたい動きの関数を呼ぶ
+    SmoothTextAnime();
   });
-});
-// 個別のチェックボックスがタッチされた時
-checks_2.forEach(element => {
-  element.addEventListener('touchstart', () => {
-    // チェックが1つでも外された時
-    if (element.checked == false) {
-      checkall_2.checked = false;
-    }
-    // 全てにチェックがされた時
-    if (document.querySelectorAll(".checks_2:checked").length == checks_2.length) {
-      checkall_2.checked = true;
-    }
-  });
-});
 
-// 【課題から絞り込む】
-const checkall_3 = document.getElementById("checksAll_3");
-const checks_3 = document.querySelectorAll(".checks_3");
-// 全て選択のチェックボックスがクリックされた時
-checkall_3.addEventListener('click', () => {
-  for (val of checks_3) {
-    checkall_3.checked == true ? val.checked = true : val.checked = false;
-  }
-});
-// 全て選択のチェックボックスがタッチされた時
-checkall_3.addEventListener('touchstart', () => {
-  for (val of checks_3) {
-    checkall_3.checked == true ? val.checked = true : val.checked = false;
-  }
-});
-// 個別のチェックボックスがクリックされた時
-checks_3.forEach(element => {
-  element.addEventListener('click', () => {
-    // チェックが1つでも外された時
-    if (element.checked == false) {
-      checkall_3.checked = false;
-    }
-    // 全てにチェックがされた時
-    if (document.querySelectorAll(".checks_3:checked").length == checks_3.length) {
-      checkall_3.checked = true;
-    }
-  });
-});
-// 個別のチェックボックスがタッチされた時
-checks_3.forEach(element => {
-  element.addEventListener('touchstart', () => {
-    // チェックが1つでも外された時
-    if (element.checked == false) {
-      checkall_3.checked = false;
-    }
-    // 全てにチェックがされた時
-    if (document.querySelectorAll(".checks_3:checked").length == checks_3.length) {
-      checkall_3.checked = true;
-    }
-  });
-});
+  // ページが読み込まれたらすぐに動かしたい場合の記述
+  $(window).on('load', function () {
+    PageTopAnime(); /* スクロールした際の動きの関数を呼ぶ*/
+    delayScrollAnime();
+    fadeAnime(); //印象編 4 最低限おぼえておきたい動きの関数を呼ぶ
+    SmoothTextAnime();
+  }); // ここまでページが読み込まれたらすぐに動かしたい場合の記述

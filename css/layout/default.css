@@ -20,15 +20,15 @@
   margin-bottom: -30px;
 }
 .l-3column > .l-column {
-  width: 31.707%;
-  margin-right: 2.43902%;
+  width: calc((100% - 40px) / 3);
   margin-bottom: 30px;
+  margin-right: 20px;
 }
 .l-3column > .l-column:nth-of-type(3n) {
   margin-right: 0;
 }
 .l-2column > .l-column {
-  width: calc(100% / 2);
+  width: calc((100% - 40px) / 2);
 }
 /* ２段組の設定 */
 #content {
@@ -59,6 +59,7 @@
 @media (max-width: 600px) {
   .l-2column > .l-column, .l-3column > .l-column {
     width: auto;
+    margin-right: 0;
     margin-bottom: 2em;
   }
   .l-content-fixed, .blog .l-main, .blog .l-sidebar {
@@ -70,8 +71,11 @@
   .blog .l-main {
     margin-right: 0;
   }
-  .l-content-fixed, .l-multicolumn {
-    padding: 0 1rem;
+  .l-content-fixed {
+    padding: 0 16px;
+  }
+  .l-multicolumn {
+    padding: 0;
   }
   #content, .l-multicolumn {
     display: block;

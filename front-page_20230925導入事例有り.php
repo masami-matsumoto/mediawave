@@ -107,7 +107,58 @@ get_header();
     </table>
     <a class = "round_arrow arrow-position-right" href = "/category/news/" > 一覧へ </a> </section >
   <!-- case study --> 
-<!-- ＊導入事例一旦削除20230925 -->
+<section class="section l-content-fixed" id="caseStudy">
+  <header class="section-header">
+      <h2 class="section-title smoothTrigger"><span class="section-title__inner">Case study</span></h2>
+      <p class="section-subtitle smoothTrigger">事例紹介</p>
+    </header>
+    <div class="case_study_area grid-x">
+      <!-- 導入事例 -->
+    <?php
+    // ループ処理の前に wp_reset_query() を追加
+    wp_reset_query();
+        $args = array(
+          'post_type' => 'case-study',
+          'posts_per_page' => 3, // 取得数
+　　　　　　);
+        $wp_query = new WP_Query( $args );
+        if ( $wp_query->have_posts() ):
+          while ( $wp_query->have_posts() ): $wp_query->the_post();
+        ?>
+          <a class="case_study cell small-6 large-4" href="<?php the_field('case_url'); ?>">
+            <div class="img_area">
+              <img src="<?php the_field('case_logo'); ?>" alt="">
+            </div>
+            <div class="text_area">
+              <h3 class="page-title"><?php the_field('case_h1'); ?></h3>
+              <div class="case">
+                <p class="t_3">▼ &nbsp;施設名</p>
+                <p class="t_3">・&nbsp;<?php the_field('case_company_name'); ?></p>
+              </div>
+              <div class="service">
+                <p class="t_3">▼ &nbsp;導入サービス</p><p class="t_3">
+                <?php if( get_field('service') ) { ?>
+                <?php $services = get_field('service');?>
+                  <p class="t_3">
+                  <?php
+                $tmp = $services;
+                foreach ( (array)$services as $service ) { ?>
+               <p>・&nbsp;<?php echo $service; ?></p>
+               <?php } ?></p>
+                <?php } ?>
+              </div>
+            </div>
+          </a>
+          <?php
+        endwhile;
+        wp_reset_postdata();
+        endif;
+        ?>
+          <!-- 導入事例ここまで -->
+         
+        </div>
+        <a class="round_arrow arrow-position-right" href="/case-study/">一覧へ</a>
+    </section> 
   <!-- pick-up service -->
   <section class="l-content-fixed section">
     <header class="section-header">

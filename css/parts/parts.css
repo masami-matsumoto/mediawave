@@ -329,7 +329,7 @@
 /* その場で */
 .fadeIn {
   animation-name: fadeInAnime;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   opacity: 0;
 }
@@ -930,3 +930,4 @@ body.appear .fluid-lead h2 {
     display: block;
   }
 }
+

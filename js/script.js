@@ -1,3 +1,4 @@
+
 /*===========================================================*/
 /*機能編 8-1-1ページの先頭にスムーススクロールする*/
 /*===========================================================*/
@@ -61,7 +62,7 @@ $('.slider').slick({
 /*===========================================================*/
 
 function delayScrollAnime() {
-  var time = 0.2; //遅延時間を増やす秒数の値
+  var time = 0.3; //遅延時間を増やす秒数の値
   var value = time;
   $('.delayScroll').each(function () {
     var parent = this; //親要素を取得
@@ -195,6 +196,7 @@ function fadeAnime() {
     delayScrollAnime();
     fadeAnime(); //印象編 4 最低限おぼえておきたい動きの関数を呼ぶ
     SmoothTextAnime();
+    BlurTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
   });
 
   // ページが読み込まれたらすぐに動かしたい場合の記述
@@ -203,4 +205,5 @@ function fadeAnime() {
     delayScrollAnime();
     fadeAnime(); //印象編 4 最低限おぼえておきたい動きの関数を呼ぶ
     SmoothTextAnime();
+    BlurTextAnimeControl();/* アニメーション用の関数を呼ぶ*/
   }); // ここまでページが読み込まれたらすぐに動かしたい場合の記述

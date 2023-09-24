@@ -11,7 +11,7 @@ get_header();
         <h2 class="section-title"><span class="section-title__inner">Service</span></h2>
         <p class="section-subtitle">サービス一覧</p>
       </header>
-      <p class="section-header">「As Associate」=「仕事仲間であり、頼れるプロの同僚であり、共同経営者である」<br>という当社の提供価値を実現させるため宿泊業界で働く方の課題解決という視点とサービスを通じてお届けしたい想いをもとに4つのサービスコンセプトカテゴリを設定しサービス展開を行っています。</p>
+      <p class="section-header">「As Associate」=「仕事仲間であり、頼れるプロの同僚であり、共同経営者である」<br>という当社の提供価値を実現させるため宿泊業界で働く方の課題解決という視点でサービス展開を行っています。</p>
       <!-- <ul class="sort-btn">
         <li class="sort-btn__item">
           <dl>

@@ -227,9 +227,9 @@
     display: block;
     padding: 0.7rem;
   }
-  .nav-menu-item:last-child {
+  /* .nav-menu-item:last-child {
     margin-top: 0.7rem;
-  }
+  } */
   .nav-menu.is-active {
     left: 0;
   }
@@ -258,7 +258,7 @@
     z-index: 999;
   }
   .nav-menu-contact {
-    top: 70% !important;
+    top: 73% !important;
   }
   .nav-menu-item-contact {
     margin-left: 0;
@@ -290,7 +290,7 @@
 }
 .section-header {
   margin: 0 0 2.5em 0;
-  line-height: 1.2;
+  /* line-height: 1.2; */
 }
 .section-title {
   margin: 0;
@@ -908,7 +908,7 @@
   left: 40px;
   width: 70px;
   height: 2px;
-  background-color: #2b550e;
+  background-color: #C0A479;
   z-index: 1;
   margin-right: 160px;
 }
@@ -993,6 +993,9 @@
   width: 90px;
   overflow: hidden;
   margin: 0 auto;
+}
+.consept-text span {
+  display: inline-block;
 }
 /* box */
 .boxes {

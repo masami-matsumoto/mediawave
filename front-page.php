@@ -62,7 +62,7 @@ get_header();
 		  ?>
 	    </div>
       </div>
-      <a class="round_arrow arrow-position-right" href="/service/">サービス一覧へ</a> 
+      <!-- <a class="round_arrow arrow-position-right" href="/service/">サービス一覧へ</a>  -->
       </section>
     
   <!-- news -->
@@ -182,9 +182,7 @@ get_header();
 		  ?>
       <article class="l-column pick-up">
 		 <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail(); ?></a>
-        <p class="section-item-info-title">
-          <?php the_time('Y/m/d'); ?>
-          </p>
+        <!-- <p class="section-item-info-title">投稿日付削除</p> -->
 	  </article>
 	  <?php
 		  endwhile;

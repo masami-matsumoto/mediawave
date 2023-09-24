@@ -25,10 +25,10 @@ get_header();
           <h3><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">As Associates</span></span></h3>
         </div>
         <div class="l-multicolumn l-2column">
-          <div class="l-column consept-text">
-            <p class="fadeUpTrigger">お客様に対して「仕事仲間であり、頼れるプロの同僚であり、共同経営者である」という３つの役割と価値を提供したいという想いから事業やサービスを通じて提供する価値を「As Associates」という言葉で表現しています。</p>
-            <p class="fadeUpTrigger">そして「As Associates」という提供価値を実現させる為に当社が最も大切にしている活動コンセプトを「協働」という二文字で表現しています。</p>
-            <p class="fadeUpTrigger">私達の強みは開発力でもなく、アイデアでもなく、専門知識でもなく、豊かな業界経験でもありません。お客様に寄り添い、共に試行錯誤し最後は必ずやり切るという「協働」の姿勢こそが私達だけが作り出せる独自の強みであり、「As Associates」という事業価値を提供する為の最初の一歩であると考えています。 </p>
+          <div class="l-column consept-text delayScroll">
+            <p>お客様に対して「仕事仲間であり、頼れるプロの同僚であり、共同経営者である」という３つの役割と価値を提供したいという想いから事業やサービスを通じて提供する価値を<span>「As Associates」</span>という言葉で表現しています。</p>
+            <p>そして「As Associates」という提供価値を実現させる為に当社が最も大切にしている活動コンセプトを「協働」という二文字で表現しています。</p>
+            <p>私達の強みは開発力でもなく、アイデアでもなく、専門知識でもなく、豊かな業界経験でもありません。お客様に寄り添い、共に試行錯誤し最後は必ずやり切るという「協働」の姿勢こそが私達だけが作り出せる独自の強みであり、「As Associates」という事業価値を提供する為の最初の一歩であると考えています。 </p>
           </div>
           <div class="concept-list l-column"> <img src="<?php echo get_template_directory_uri(); ?>/images/associates.png" alt=""/> </div>
         </div>
@@ -41,7 +41,7 @@ get_header();
       </header>
       <div class="vision-area__header">
         <h3><span class="bgextend bgLRextendTrigger"><span class="bgappearTrigger">メディアウェイブ 2030年ビジョン</span></span></h3>
-        <p>～ホテルオペレーションのイノベーションリーダーに～</p>
+        <p class="fluid-lead__text_small">～ホテルオペレーションのイノベーションリーダーに～</p>
       </div>
       <div class="vision-text">
         <p class="fadeInTrigger">人の喜びは必ず人から始まる。人は本来他者を喜ばせることが好きであり
